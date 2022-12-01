@@ -6,4 +6,4 @@
 #while true; do phoronix-test-suite batch-run unigine-heaven; done | watch "sensors && echo nVidia: &&  nvidia-smi -q | grep 'Current Temp' && nvidia-smi -q | grep Gpu"
 sudo echo "ok"
 #./stress.sh | ./heaven.sh > /dev/null | sudo memtester 10G >/dev/null | ./watch.sh
-./stress.sh | ./gputest.sh | sudo memtester 10G >/dev/null | ./watch.sh
+./stress.sh | ./gputest.sh | sudo nice -n 15 sudo memtester 10G >/dev/null | ./watch.sh
