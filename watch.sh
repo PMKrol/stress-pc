@@ -3,5 +3,5 @@ watch --interval 1 \
 && nvidia-smi -q | grep "GPU Current Temp" \
 && nvidia-smi -q | grep Gpu \
 && echo "" \
-&& ps -C heaven_x64,stress-ng-cpu -o %cpu -o %c '
+&& ps -C GpuTest,stress-ng-cpu,memtester -o pid,%cpu,ni,comm'
 #&& mpstat'
